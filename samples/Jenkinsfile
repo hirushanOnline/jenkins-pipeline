@@ -1,15 +1,15 @@
 pipeline { 
 // 
     environment { 
-        registry = "dimuit86/node-demo-app" 
-        registryCredential = 'DockerHubAuth' 
+        registry = "YourDockerhubAccount/YourRepository" 
+        registryCredential = 'dockerhub_id' 
         dockerImage = '' 
     }
     agent any 
     stages { 
         stage('Cloning our Git') { 
             steps { 
-                git 'https://github.com/dimuit86/jenkins-pipeline.git' 
+                git 'https://github.com/YourGithubAccount/YourGithubRepository.git' 
             }
         } 
         stage('Building our image') { 
