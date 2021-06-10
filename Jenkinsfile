@@ -1,3 +1,7 @@
+String branchName = env.BRANCH_NAME
+String gitCredentials = "GitHubPersonalAccessToken"
+String repoUrl = "https://github.com/dimuit86/jenkins-pipeline.git"
+
 pipeline { 
 // 
     environment { 
@@ -9,9 +13,7 @@ pipeline {
     stages { 
         stage('Cloning our Git') { 
             steps { 
-                git branch: 'main',
-                credentialsId: 'GitHubPersonalAccessToken',
-                git 'https://github.com/dimuit86/jenkins-pipeline.git' 
+                git branch: branchName, credentialsId: 	gitCredentials, url: repoUrl        
             }
         } 
         stage('Building our image') { 
