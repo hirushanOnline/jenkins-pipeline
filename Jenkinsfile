@@ -17,7 +17,7 @@ pipeline {
         stage('Cloning our Git') { 
 
             steps { 
-                git branch: 'master',
+                git branch: 'main',
                 credentialsId: 'GitHubPersonalAccessToken',
                 url: 'https://github.com/dimuit86/jenkins-pipeline.git'
                 // git 'https://github.com/dimuit86/jenkins-pipeline.git' 
