@@ -17,54 +17,56 @@ pipeline {
         stage('Cloning our Git') { 
 
             steps { 
-
-                git 'https://github.com/dimuit86/jenkins-pipeline.git' 
-
-            }
-
-        } 
-
-        stage('Building our image') { 
-
-            steps { 
-
-                script { 
-
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
-
-                }
-
-            } 
-
-        }
-
-        stage('Deploy our image') { 
-
-            steps { 
-
-                script { 
-
-                    docker.withRegistry( '', registryCredential ) { 
-
-                        dockerImage.push() 
-
-                    }
-
-                } 
+                git branch: 'master',
+                credentialsId: 'GitHubPersonalAccessToken',
+                url: 'https://github.com/dimuit86/jenkins-pipeline.git'
+                // git 'https://github.com/dimuit86/jenkins-pipeline.git' 
 
             }
 
         } 
 
-        stage('Cleaning up') { 
+        // stage('Building our image') { 
 
-            steps { 
+        //     steps { 
 
-                sh "docker rmi $registry:$BUILD_NUMBER" 
+        //         script { 
 
-            }
+        //             dockerImage = docker.build registry + ":$BUILD_NUMBER" 
 
-        } 
+        //         }
+
+        //     } 
+
+        // }
+
+        // stage('Deploy our image') { 
+
+        //     steps { 
+
+        //         script { 
+
+        //             docker.withRegistry( '', registryCredential ) { 
+
+        //                 dockerImage.push() 
+
+        //             }
+
+        //         } 
+
+        //     }
+
+        // } 
+
+        // stage('Cleaning up') { 
+
+        //     steps { 
+
+        //         sh "docker rmi $registry:$BUILD_NUMBER" 
+
+        //     }
+
+        // } 
 
     }
 
