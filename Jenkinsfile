@@ -13,7 +13,7 @@ pipeline {
     stages { 
         stage('Cloning our Git') { 
             steps { 
-                git branch: branchName, credentialsId: 	gitCredentials, url: repoUrl        
+                git branch: main , credentialsId: 	gitCredentials, url: repoUrl        
             }
         } 
         stage('Building our image') { 
