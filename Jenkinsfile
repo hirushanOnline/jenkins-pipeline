@@ -12,7 +12,7 @@ pipeline {
         stage('Cloning our Git') { 
             steps { 
                 git branch: 'main',
-                credentialsId: 'GitHubPersonalAccessToken',
+                credentialsId: 'GitHubPersonalAccessToken2',
                 url: 'https://github.com/hirushanOnline/jenkins-pipeline.git'
                 
             }
