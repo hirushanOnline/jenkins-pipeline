@@ -17,6 +17,9 @@ pipeline {
                 
             }
 
+            steps { 
+                 git 'https://github.com/hirushanOnline/jenkins-pipeline.git' 
+            }
         } 
         stage('Building our image') { 
             steps { 
