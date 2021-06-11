@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   jenkins-master:
-     image: jenkins/jenkins:lts-jdk11
+    # image: jenkins/jenkins:lts-jdk11
     build:
       context: .
     restart: unless-stopped    
