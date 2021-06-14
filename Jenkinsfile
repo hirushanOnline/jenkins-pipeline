@@ -1,13 +1,7 @@
 pipeline { 
 // 
-    // environment { 
-    //     registry = "hirushanonline/node-demo-app" 
-    //     registryCredential = 'DockerHubAuth' 
-    //     dockerImage = '' 
-    // }
-
-     environment { 
-        registry = "dimuit86/node-demo-app" 
+    environment { 
+        registry = "hirushanonline/node-demo-app" 
         registryCredential = 'DockerHubAuth' 
         dockerImage = '' 
     }
@@ -18,7 +12,7 @@ pipeline {
         stage('Cloning our Git') { 
             steps { 
                 git branch: 'main',
-                credentialsId: 'GitHubPersonalAccessToken2',
+                credentialsId: 'GitHubPersonalAccessToken',
                 url: 'https://github.com/hirushanOnline/jenkins-pipeline.git'
                 
             }
