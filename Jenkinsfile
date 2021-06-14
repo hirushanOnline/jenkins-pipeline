@@ -1,7 +1,13 @@
 pipeline { 
 // 
-    environment { 
-        registry = "hirushanonline/node-demo-app" 
+    // environment { 
+    //     registry = "hirushanonline/node-demo-app" 
+    //     registryCredential = 'DockerHubAuth' 
+    //     dockerImage = '' 
+    // }
+
+     environment { 
+        registry = "dimuit86/node-demo-app" 
         registryCredential = 'DockerHubAuth' 
         dockerImage = '' 
     }
